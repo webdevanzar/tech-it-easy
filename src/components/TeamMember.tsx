@@ -50,7 +50,7 @@ const TeamMember = ({
         </div>
 
         <div className="p-6">
-          <h3 className="text-2xl font-display font-bold mb-1">{name}</h3>
+          <h3 className="text-2xl font-display font-bold mb-1 border-b-2">{name}</h3>
           <p className="text-primary font-medium mb-3">{role}</p>
           <p className="text-muted-foreground text-sm leading-relaxed mb-4">{bio}</p>
 

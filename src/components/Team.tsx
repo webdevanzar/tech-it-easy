@@ -13,49 +13,49 @@ const Team = () => {
 
   const teamMembers = [
     {
-      name: "Alex Chen",
+      name: "Muhammed Anzarshah",
       role: "Full-Stack Developer & Team Lead",
       bio: "Passionate about building scalable web applications. Specializes in React, Node.js, and cloud architecture. Loves solving complex problems and mentoring teammates.",
       image: teamMember1,
       skills: ["React", "TypeScript", "Node.js", "AWS", "PostgreSQL"],
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-      email: "alex@techiteasy.dev",
+      github: "https://github.com/webdevanzar",
+      linkedin: "https://www.linkedin.com/in/muhammed-anzarshah-005356279/",
+      email: "anzarsha3240@gmail.com",
     },
     {
-      name: "Sarah Martinez",
+      name: "Rizwan Hamza k",
       role: "Frontend Developer & UI Specialist",
       bio: "Creates pixel-perfect user interfaces with a keen eye for design. Expert in React, animations, and responsive design. Believes great UX is the key to successful products.",
       image: teamMember2,
-      skills: ["React", "Tailwind CSS", "Framer Motion", "Figma", "TypeScript"],
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-      email: "sarah@techiteasy.dev",
+      skills: ["React", "Tailwind CSS", "Framer Motion", "Figma","Next.js",],
+      github: "https://github.com/riizzwaan",
+      linkedin: "https://www.linkedin.com/in/rizwan-hamza-75844a284/",
+      email: "rizwanhamzak04@gmail.com",
     },
     {
-      name: "Michael Park",
+      name: "Shameem Shah",
       role: "UI/UX Designer & Product Strategist",
       bio: "Transforms ideas into beautiful, intuitive interfaces. Skilled in user research, wireframing, and visual design. Focuses on creating experiences that delight users.",
       image: teamMember3,
       skills: ["Figma", "Adobe XD", "UI Design", "Prototyping", "User Research"],
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-      email: "michael@techiteasy.dev",
+      github: "https://github.com/mohammedshameemshah",
+      linkedin: "https://www.linkedin.com/in/mohammed-shameem-shah-005356279/",
+      email: "shameemshah005356279@gmail.com",
     },
     {
-      name: "Priya Sharma",
+      name: "Krishna Prasad Pr",
       role: "AI/ML Engineer & Backend Developer",
       bio: "Builds intelligent systems and robust APIs. Specializes in machine learning, NLP, and backend development. Passionate about leveraging AI to solve real-world challenges.",
       image: teamMember4,
-      skills: ["Python", "TensorFlow", "Node.js", "MongoDB", "AI/ML"],
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-      email: "priya@techiteasy.dev",
+      skills: ["Python", "TensorFlow", "Node.js", "MongoDB", "AI/ML","Next.js"],
+      github: "https://github.com/krrrshhh",
+      linkedin: "https://www.linkedin.com/in/krishna-prasad-pr-9b5224393/",
+      email: "krishna.prasad.pr@gmail.com",
     },
   ];
 
   return (
-    <section id="team" className="py-20 sm:py-32 bg-muted/30" ref={ref}>
+    <section id="team" className="py-20 sm:py-32 bg-muted/30 border-b-2" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

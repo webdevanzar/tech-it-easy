@@ -9,7 +9,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-hero">
+    <section className="relative min-h-screen border-b-2 flex items-center justify-center overflow-hidden gradient-hero">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -48,7 +48,7 @@ const Hero = () => {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
               <Sparkles className="w-4 h-4" />
-              Welcome to our portfolio
+              Design. Develop. Deliver.
             </span>
           </motion.div>
 

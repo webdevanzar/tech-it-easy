@@ -47,7 +47,7 @@ const Achievements = () => {
   ];
 
   return (
-    <section id="achievements" className="py-20 sm:py-32 bg-background" ref={ref}>
+    <section id="achievements" className="py-20 sm:py-32 bg-background border-b-2" ref={ref}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
