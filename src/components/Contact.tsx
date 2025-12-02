@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, MapPin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const ref = useRef(null);
@@ -17,14 +18,40 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-    setFormData({ name: "", email: "", message: "" });
+    try {
+      setLoading(true);
+      await emailjs.send(
+        "service_rtsm4h5",
+        "template_9qfgoxd",
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        {
+          publicKey: "LTRJa1ERj-XgbmxvB",
+        }
+      );
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+      setFormData({ name: "", email: "", message: "" });
+      formRef.current?.reset();
+    } catch (error) {
+      toast({
+        title: "Failed to send",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -75,10 +102,10 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold mb-1">Email Us</h4>
                   <a
-                    href="mailto:hello@techiteasy.dev"
+                    href="mailto:anzarsha3240@gmail.com"
                     className="text-primary hover:underline"
                   >
-                    hello@techiteasy.dev
+                    anzarsha3240@gmail.com
                   </a>
                 </div>
               </div>
@@ -126,7 +153,11 @@ const Contact = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 shadow-lg border border-border">
+            <form
+              onSubmit={handleSubmit}
+              ref={formRef}
+              className="bg-card rounded-2xl p-8 shadow-lg border border-border"
+            >
               <div className="space-y-6">
                 <div>
                   <Label htmlFor="name">Your Name</Label>
@@ -171,9 +202,11 @@ const Contact = () => {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full gradient-primary text-white hover:opacity-90 transition-opacity"
+                  disabled={loading}
+                  aria-busy={loading}
+                  className="w-full gradient-primary text-white hover:opacity-90 transition-opacity disabled:opacity-60"
                 >
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                   <Send className="ml-2 w-4 h-4" />
                 </Button>
               </div>

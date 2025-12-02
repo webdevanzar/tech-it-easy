@@ -41,7 +41,7 @@ const Achievements = () => {
 
   const stats = [
     { label: "Projects Completed", value: "20+" },
-    { label: "Hackathons Won", value: "5" },
+    { label: "Hackathons Participated", value: "30+" },
     { label: "Happy Clients", value: "15+" },
     { label: "GitHub Stars", value: "1K+" },
   ];

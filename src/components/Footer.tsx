@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -47,7 +47,7 @@ const Footer = () => {
             <h4 className="font-semibold mb-3">Connect With Us</h4>
             <div className="flex gap-3">
               <a
-                href="https://github.com"
+                href="https://github.com/webdevanzar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-muted hover:bg-primary hover:text-white transition-colors flex items-center justify-center"
@@ -55,7 +55,7 @@ const Footer = () => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/muhammed-anzarshah-005356279/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-muted hover:bg-primary hover:text-white transition-colors flex items-center justify-center"
@@ -63,7 +63,7 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="mailto:hello@techiteasy.dev"
+                href="mailto:anzarsha3240@gmail.com"
                 className="w-10 h-10 rounded-lg bg-muted hover:bg-primary hover:text-white transition-colors flex items-center justify-center"
               >
                 <Mail className="w-5 h-5" />
@@ -76,7 +76,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>© 2024 Tech It Easy. All rights reserved.</p>
           <p className="flex items-center gap-2">
-            Built with <Heart className="w-4 h-4 text-secondary fill-secondary" /> by our team
+            Built by our team
           </p>
         </div>
       </div>

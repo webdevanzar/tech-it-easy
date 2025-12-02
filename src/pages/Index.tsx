@@ -6,6 +6,8 @@ import Skills from "@/components/Skills";
 import Achievements from "@/components/Achievements";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { ChatBot } from "@/components/Chatbot";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -18,6 +20,8 @@ const Index = () => {
       <Achievements />
       <Contact />
       <Footer />
+      <ChatBot />
+      <WhatsAppButton />
     </div>
   );
 };

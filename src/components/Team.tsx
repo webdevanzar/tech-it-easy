@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import TeamMember from "./TeamMember";
-import teamMember1 from "@/assets/team-member-1.jpg";
-import teamMember2 from "@/assets/team-member-2.jpg";
-import teamMember3 from "@/assets/team-member-3.jpg";
+import teamMember1 from "@/assets/team-member-1.png";
+import teamMember2 from "@/assets/team-member-2.jpeg";
+import teamMember3 from "@/assets/team-member-3.jpeg";
 import teamMember4 from "@/assets/team-member-4.jpg";
 
 const Team = () => {

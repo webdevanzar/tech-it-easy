@@ -76,9 +76,23 @@ const About = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              className="bg-card rounded-xl p-6 shadow-md border border-border hover-lift card-glow"
+              className={`bg-card rounded-xl p-6 shadow-md border border-border hover-lift ${
+                index % 3 === 0
+                  ? "card-glow"
+                  : index % 3 === 1
+                  ? "card-glow-secondary"
+                  : "card-glow-accent"
+              }`}
             >
-              <div className="w-12 h-12 rounded-lg gradient-primary flex items-center justify-center mb-4">
+              <div
+                className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${
+                  index % 3 === 0
+                    ? "gradient-primary"
+                    : index % 3 === 1
+                    ? "gradient-secondary"
+                    : "gradient-accent"
+                }`}
+              >
                 <feature.icon className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-lg font-display font-semibold mb-2">{feature.title}</h3>
