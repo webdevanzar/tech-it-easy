@@ -14,6 +14,7 @@ interface TeamMemberProps {
   linkedin?: string;
   email?: string;
   delay?: number;
+  glowVariant?: 'primary' | 'secondary' | 'accent';
 }
 
 const TeamMember = ({
@@ -26,7 +27,9 @@ const TeamMember = ({
   linkedin,
   email,
   delay = 0,
+  glowVariant = 'primary',
 }: TeamMemberProps) => {
+  const glowClass = glowVariant === 'primary' ? 'card-glow' : glowVariant === 'secondary' ? 'card-glow-secondary' : 'card-glow-accent';
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -34,7 +37,7 @@ const TeamMember = ({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay }}
     >
-      <Card className="overflow-hidden hover-lift card-glow border-border group">
+      <Card className={`overflow-hidden hover-lift ${glowClass} border-border group`}>
         <div className="relative overflow-hidden">
           <motion.img
             src={image}

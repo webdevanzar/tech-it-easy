@@ -92,7 +92,9 @@ const Achievements = () => {
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
             >
-              <Card className="p-6 border-border shadow-md hover-lift card-glow h-full">
+              <Card className={`p-6 border-border shadow-md hover-lift ${
+                index % 3 === 0 ? 'card-glow' : index % 3 === 1 ? 'card-glow-secondary' : 'card-glow-accent'
+              } h-full`}>
                 <div className="flex items-start gap-4">
                   <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${achievement.color} flex items-center justify-center flex-shrink-0`}>
                     <achievement.icon className="w-6 h-6 text-white" />

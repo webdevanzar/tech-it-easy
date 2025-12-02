@@ -91,7 +91,9 @@ const Skills = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-card rounded-xl p-6 shadow-md border border-border hover-lift card-glow"
+              className={`bg-card rounded-xl p-6 shadow-md border border-border hover-lift ${
+                index % 3 === 0 ? 'card-glow' : index % 3 === 1 ? 'card-glow-secondary' : 'card-glow-accent'
+              }`}
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${category.color} flex items-center justify-center`}>
