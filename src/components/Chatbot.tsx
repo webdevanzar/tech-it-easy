@@ -74,7 +74,7 @@ export const ChatBot = () => {
   };
 
   return (
-    <div className="fixed md:bottom-6 bottom-8 left-6 z-50">
+    <div className="fixed md:bottom-6 bottom-8 left-6 z-[60]">
       {/* Toggle Button */}
       {!open && (
         <button
@@ -97,7 +97,7 @@ export const ChatBot = () => {
             </button>
           </div>
 
-          <div className="h-[60vh] max-h-[70vh] overflow-y-auto  p-3 space-y-2 bg-background">
+          <div className="h-[60vh] max-h-[70vh] overflow-y-auto p-3 space-y-2 bg-background">
             {messages.map((msg, i) => (
               <div
                 key={i}
@@ -119,19 +119,19 @@ export const ChatBot = () => {
           </div>
 
           <div className="border-t p-2 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1 sm:gap-2">
               <input
                 type="text"
                 value={input}
                 placeholder="Ask about our team..."
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-                className="flex-1 h-10 px-3 rounded-full border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                className="min-w-0 flex-1 h-10 px-3 rounded-full border border-border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm"
               />
               <button
                 onClick={sendMessage}
-                className="inline-flex items-center justify-center gap-2 h-10 px-4 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 disabled:opacity-50"
-                disabled={loading || !input.trim()}
+                className="shrink-0 inline-flex items-center justify-center gap-2 h-10 px-3 sm:px-4 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 disabled:opacity-50 whitespace-nowrap"
+                disabled={loading}
                 aria-label="Send message"
               >
                 Send
