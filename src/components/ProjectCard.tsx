@@ -13,6 +13,7 @@ interface ProjectCardProps {
   liveUrl?: string;
   githubUrl?: string;
   delay?: number;
+  glowVariant?: 'primary' | 'secondary' | 'accent';
 }
 
 const ProjectCard = ({
@@ -24,7 +25,9 @@ const ProjectCard = ({
   liveUrl,
   githubUrl,
   delay = 0,
+  glowVariant = 'primary',
 }: ProjectCardProps) => {
+  const glowClass = glowVariant === 'primary' ? 'card-glow' : glowVariant === 'secondary' ? 'card-glow-secondary' : 'card-glow-accent';
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -32,7 +35,7 @@ const ProjectCard = ({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay }}
     >
-      <Card className="overflow-hidden hover-lift card-glow border-border group h-full flex flex-col">
+      <Card className={`overflow-hidden hover-lift ${glowClass} border-border group h-full flex flex-col`}>
         <div className="relative overflow-hidden h-64">
           <motion.img
             src={image}

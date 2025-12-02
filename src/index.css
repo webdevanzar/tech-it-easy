@@ -166,6 +166,26 @@
     @apply border-primary/50;
   }
 
+  .card-glow-secondary {
+    box-shadow: var(--shadow-medium), 0 0 30px hsl(var(--secondary) / 0.1);
+    @apply transition-all duration-300 border border-secondary/20;
+  }
+
+  .card-glow-secondary:hover {
+    box-shadow: var(--shadow-strong), var(--shadow-glow-secondary);
+    @apply border-secondary/50;
+  }
+
+  .card-glow-accent {
+    box-shadow: var(--shadow-medium), 0 0 30px hsl(var(--accent) / 0.1);
+    @apply transition-all duration-300 border border-accent/20;
+  }
+
+  .card-glow-accent:hover {
+    box-shadow: var(--shadow-strong), var(--shadow-glow-accent);
+    @apply border-accent/50;
+  }
+
   .glow-text {
     text-shadow: 0 0 20px hsl(var(--primary) / 0.5),
                  0 0 40px hsl(var(--primary) / 0.3);

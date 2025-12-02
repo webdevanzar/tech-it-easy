@@ -75,7 +75,12 @@ const Projects = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <ProjectCard key={project.title} {...project} delay={index * 0.1} />
+            <ProjectCard 
+              key={project.title} 
+              {...project} 
+              delay={index * 0.1}
+              glowVariant={index % 3 === 0 ? 'primary' : index % 3 === 1 ? 'secondary' : 'accent'}
+            />
           ))}
         </div>
       </div>

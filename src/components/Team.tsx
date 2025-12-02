@@ -73,7 +73,12 @@ const Team = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member, index) => (
-            <TeamMember key={member.name} {...member} delay={index * 0.1} />
+            <TeamMember 
+              key={member.name} 
+              {...member} 
+              delay={index * 0.1}
+              glowVariant={index % 3 === 0 ? 'primary' : index % 3 === 1 ? 'secondary' : 'accent'}
+            />
           ))}
         </div>
       </div>
