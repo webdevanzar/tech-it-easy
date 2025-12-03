@@ -17,8 +17,13 @@ export const ChatBot = () => {
     setLoading(true);
 
     try {
+      const apiKey = import.meta.env.VITE_API_KEY as string | undefined;
+      if (!apiKey) {
+        throw new Error("VITE_API_KEY is not defined");
+      }
+
       const res = await fetch(
-        "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyCICuhyDeExdYw9ejskQ9JPNVvFPv2lNeE",
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
         {
           method: "POST",
           headers: {
